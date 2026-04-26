@@ -1,0 +1,151 @@
+.navigation-bar a{
+    color: gray;
+}
+
+.navigation-bar a:hover{
+    color: white;
+}
+
+.profile {
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+  align-items: flex-start;
+}
+
+/* FOTO */
+.profile-left img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.profile-left{
+    display:flex;
+    flex-direction:column;
+    border-right:1px solid #ddd;
+    padding-right:5px;
+}
+
+/* SAĞ KISIM */
+.profile-right {
+  flex: 1;
+}
+
+.profile-right p {
+  margin: 5px 0;
+  color: #444;
+}
+
+
+.profile-right ul{
+   background-color: #f8f9fa;
+   padding: 20px 30px;
+   border-radius: 12px;
+   border-left: 4px solid gray;
+   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+   list-style-type: square;
+}
+
+.profile-right ul li{
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.profile-right ul li:last-child{
+  margin-bottom: 0;
+}
+.profile-right strong{
+  display:inline-block;
+  font-size:24px;
+  font-weight:600;
+  padding-bottom:6px;
+  margin-bottom:15px;
+  border-bottom:2px solid gray;
+}
+.profile-right-paragraph p{
+
+ background-color: #f8f9fa;
+ padding: 10px 20px;
+ border-radius: 12px;
+ border-left: 4px solid gray;
+ box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+ list-style-type: square;
+ line-height: 30px;
+}
+
+.profile-aside{
+  margin-top:20px;
+}
+
+.mini-box{
+  background:#f8f9fa;
+  padding:15px;
+  margin-bottom:15px;
+  border-left:4px solid gray;
+  border-radius:8px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  transition:0.3s;
+}
+
+.mini-box:hover{
+  transform:translateY(-3px);
+}
+
+.mini-box h4{
+  margin-bottom:10px;
+}
+
+.mini-box ul{
+  padding-left:20px;
+  margin:0;
+}
+
+.mini-box p{
+  margin:5px 0;
+  line-height:1.5;
+}
+.mini-box a{
+  display:inline-block;
+  text-decoration:none;
+  color:gray;
+  margin-right:15px;
+  margin-top:5px;
+  padding:6px 10px;
+  border-radius:6px;
+  background:#f8f9fa;
+}
+
+.mini-box a:hover{
+  background:gray;
+  color:white;
+}
+
+.social-icons{
+  display:flex;
+  gap:15px;
+  background:#f8f9fa;
+  padding:10px 15px;
+  border-radius:8px;
+}
+
+.profile-footer{
+  margin-top:5px;
+  padding:15px;
+  background:#f8f9fa;
+  border-left:4px solid gray;
+  border-radius:8px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  font-size:14px;
+  color:#555;
+  transition:0.3s;
+}
+.profile-footer:hover{
+  transform:translateY(-3px);
+}
+
+.profile-footer p{
+  margin:6px 0;
+}
