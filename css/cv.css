@@ -1,0 +1,78 @@
+.navigation-bar a{
+    color: gray;
+}
+
+.navigation-bar a:hover{
+    color: white;
+}
+
+.cv-box{
+  background:#f8f9fa;
+  padding:20px;
+  margin-bottom:20px;
+  border-left:4px solid gray;
+  border-radius:12px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  transition:0.3s;
+}
+
+.cv-box:hover{
+  transform:translateY(-3px);
+}
+
+.cv-title{
+  display:inline-block;
+  font-size:24px;
+  font-weight:700;
+  padding-bottom:6px;
+  margin-bottom:2px;
+  margin-left: 6px;
+  border-bottom:2px solid gray;
+}
+.cv-item-top{
+  padding:10px 0px 0px 0px;
+  margin: 10px 10px 2px 10px;
+}
+
+.cv-item{
+  margin: 10px;
+}
+
+.cv-header-education{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.cv-header-education img{
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.cv-header-education h5{
+  margin: 0;
+  font-weight: 700;
+}
+
+.cv-subtitle{
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding: 8px 10px;
+  background: #f8f9fa;
+  border-left: 4px solid gray;
+  border-radius: 6px;
+}
+
+.cv-item-skill{
+  margin: 20px 5px;
+}
+
+.cv-item-skill:hover{
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+.progress-bar{
+  background-color: rgb(164, 164, 164) !important;
+}
