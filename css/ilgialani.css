@@ -1,0 +1,64 @@
+.navigation-bar a{
+    color: gray;
+}
+
+.navigation-bar a:hover{
+    color: white;
+}
+header h2{
+  font-weight: 700;
+}
+
+section h3{
+  font-weight: 600;
+}
+
+#gameList{
+  margin-top: 15px;
+}
+.game-card{
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.game-img{
+  height: 200px;
+  object-fit: cover;
+}
+.game-box{
+  background:#f8f9fa;
+  padding:15px;
+  border-left:4px solid gray;
+  border-radius:8px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  transition:0.3s;
+}
+.game-box:hover{
+    transform: translateY(-3px);
+}
+.card:hover{
+  transform: translateY(-5px);
+  transition: 0.3s;
+}
+.card-img-top{
+  height: 180px;
+  object-fit: cover;
+}
+.gaming,.artist{
+  display:inline-block;
+  font-weight:600;
+  padding-bottom:6px;
+  margin-bottom:15px;
+  border-bottom:2px solid gray;
+}
+.artist-box{
+  background:#f8f9fa;
+  padding:15px;
+  border-left:4px solid gray;
+  border-radius:8px;
+  box-shadow:0 3px 10px rgba(0,0,0,.06);
+  transition:0.3s;
+}
+.artist-box:hover{
+    transform: translateY(-3px);
+}

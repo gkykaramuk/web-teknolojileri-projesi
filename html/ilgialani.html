@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İlgi Alanı</title>
+    <link rel="stylesheet" href="/css/ilgialani.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    
+  <nav class="navbar bg-dark border-bottom py-4">
+      <div class="container">
+        <a class="navbar-brand fs-2 fw-bold" href="ilgialani.html" style="color:white;">
+          İlgi Alanım
+        </a>
+          <div class="navigation-bar">
+            <a href="index.html" class="me-3 text-decoration-none fs-5 " >Ana Sayfa</a>
+            <a href="cv.html" class="me-3 text-decoration-none fs-5" >CV</a>
+            <a href="sehirim.html" class="me-3 text-decoration-none fs-5">Şehrim</a>
+            <a href="ilgialani.html" class="me-3 text-decoration-none fs-5">İlgi Alanım</a>
+            <a href="iletisim.html" class="text-decoration-none fs-5" >İletişim</a>
+          </div>
+        </div>
+    </nav>
+
+    <header class="container mt-5">
+          <h2 class="fw-bold">İlgi Alanlarım</h2>
+          <p class="text-muted" >Oyun ve Müzik</p>
+          <hr>
+    </header>
+    
+    <section class="container mt-4">
+      <div class="game-box">
+      <h3 class="fw-bold gaming">Oyunlar</h3>
+      <p class="text-muted">En çok oynadığım oyunlar</p>
+
+      <div id="gameList" class="row g-4 mt-1"></div>
+      </div>
+    </section>
+
+    <section class="container mt-4">
+      <div class="artist-box">
+      <h3 class="fw-bold artist">Sanatçılar</h3>
+      <p class="text-muted">En çok dinlediğim sanatçılar</p>
+
+      <div id="artistList" class="row g-4 mt-1"></div>
+      </div>
+    </section>
+
+    <script>
+
+const gameContainer = document.getElementById("gameList");
+
+const games = [
+  "postal 2",
+  "gta v",
+  "minecraft",
+  "counter strike 2",
+  "half life",
+  "forza horizon 4"
+];
+
+gameContainer.innerHTML = "";
+
+games.forEach(gameName => {
+
+  fetch(`https://api.rawg.io/api/games?key=a1c508d9ad9e4256bd40ceae858ef20a&search=${gameName}`)
+    .then(res => res.json())
+    .then(data => {
+
+      const game = data.results[0];
+      if (!game) return;
+
+      gameContainer.innerHTML += `
+        <div class="col-md-4 mb-3">
+          <div class="card shadow h-100">
+            <img src="${game.background_image}" class="card-img-top game-img">
+            <div class="card-body">
+              <h5 class="card-title">${game.name}</h5>
+              <p class="mb-0">Puan: ${game.rating}</p>
+            </div>
+          </div>
+        </div>
+      `;
+
+    });
+
+});
+
+const artistContainer = document.getElementById("artistList");
+artistContainer.innerHTML = "";
+
+const artists = [
+  "linkin park",
+  "evanescence",
+  "limp bizkit",
+  "deftones",
+  "korn",
+  "whatsaheart"
+];
+
+artists.forEach(name => {
+
+  fetch(`https://itunes.apple.com/search?term=${name}&entity=song&limit=1`)
+    .then(res => res.json())
+    .then(data => {
+
+      const song = data.results[0];
+      if (!song) return;
+
+      const image = song.artworkUrl100;
+
+      artistContainer.innerHTML += `
+        <div class="col-md-4 mb-3">
+          <div class="card shadow h-100 text-center p-3">
+
+            <img src="${image}" class="rounded mb-2 mx-auto" width="100" height="100">
+
+            <h5 class="card-title">${song.artistName}</h5>
+            <p class="text-muted mb-0">Sanatçı</p>
+
+          </div>
+        </div>
+      `;
+
+    });
+
+});
+
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script>
+</body>
+</html>
