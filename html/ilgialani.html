@@ -11,12 +11,18 @@
 
 <body>
     
-  <nav class="navbar bg-dark border-bottom py-4">
+   <nav class="navbar navbar-dark navbar-expand-md bg-dark border-bottom py-4">
       <div class="container">
         <a class="navbar-brand fs-2 fw-bold" href="ilgialani.html" style="color:white;">
           İlgi Alanım
         </a>
-          <div class="navigation-bar">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="nav-menu"> 
+          <div class="navigation-bar ms-auto mt-3 mt-md-0 ">
             <a href="index.html" class="me-3 text-decoration-none fs-5 " >Ana Sayfa</a>
             <a href="cv.html" class="me-3 text-decoration-none fs-5" >CV</a>
             <a href="sehirim.html" class="me-3 text-decoration-none fs-5">Şehrim</a>
@@ -24,7 +30,8 @@
             <a href="iletisim.html" class="text-decoration-none fs-5" >İletişim</a>
           </div>
         </div>
-    </nav>
+      </div>
+   </nav>
 
     <header class="container mt-5">
           <h2 class="fw-bold">İlgi Alanlarım</h2>
@@ -49,6 +56,12 @@
       <div id="artistList" class="row g-4 mt-1"></div>
       </div>
     </section>
+
+    <footer class="container mt-5 mb-4 text-center text-muted">
+        <hr>
+        <p class="mb-1">© 2026 Gökay Karamukoğlu</p>
+        <p class="mb-0">Web Teknolojileri Projesi</p>
+   </footer>
 
     <script>
 

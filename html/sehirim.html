@@ -11,12 +11,18 @@
   </head>
   <body>
       
-      <nav class="navbar bg-dark border-bottom py-4">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark border-bottom py-4">
       <div class="container">
         <a class="navbar-brand fs-2 fw-bold" href="cv.html" style="color:white;">
           Şehrim
         </a>
-          <div class="navigation-bar">
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="nav-menu">
+          <div class="navigation-bar ms-auto mt-3 mt-md-0">
             <a href="index.html" class="me-3 text-decoration-none fs-5 " >Ana Sayfa</a>
             <a href="cv.html" class="me-3 text-decoration-none fs-5" >CV</a>
             <a href="sehirim.html" class="me-3 text-decoration-none fs-5">Şehrim</a>
@@ -24,7 +30,8 @@
             <a href="iletisim.html" class="text-decoration-none fs-5" >İletişim</a>
           </div>
         </div>
-        </nav>
+      </div>    
+   </nav>
 
       <header class="container mt-5">
           <h2 class="fw-bold">Kastamonu</h2>
@@ -191,7 +198,6 @@
 
     <div id="citySlider" class="carousel slide" data-bs-ride="carousel">
 
-    <!-- küçük noktalar -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#citySlider" data-bs-slide-to="0" class="active"></button>
 
@@ -200,6 +206,10 @@
       <button type="button" data-bs-target="#citySlider" data-bs-slide-to="2"></button>
 
       <button type="button" data-bs-target="#citySlider" data-bs-slide-to="3"></button>
+
+      <button type="button" data-bs-target="#citySlider" data-bs-slide-to="4"></button>
+
+      <button type="button" data-bs-target="#citySlider" data-bs-slide-to="5"></button>
     </div>
 
 
@@ -237,9 +247,24 @@
             </div>
       </div>
 
+      <div class="carousel-item">
+        <img src="/resimler/horma-kanyonu.jpg" class="d-block w-100"
+            alt="Horma kanyonu">
+            <div class="carousel-caption">
+                  <h5>Horma Kanyonu</h5>
+            </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="/resimler/gideros-koyu.jpg" class="d-block w-100"
+            alt="Gideros koyu">
+            <div class="carousel-caption">
+                  <h5>Gideros Koyu</h5>
+            </div>
+      </div>
+
     </div>
 
-    <!-- Sol ok -->
     <button class="carousel-control-prev" 
             type="button"
             data-bs-target="#citySlider"
@@ -249,8 +274,6 @@
 
     </button>
 
-
-    <!-- Sağ ok -->
     <button class="carousel-control-next"
             type="button"
             data-bs-target="#citySlider"

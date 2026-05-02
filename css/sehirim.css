@@ -82,7 +82,7 @@
   box-shadow: 0 8px 24px rgba(0,0,0,.12);
 }
 .carousel-item img{
-  height: 600px;
+  height: 500px;
   object-fit: cover;
   border-radius: 14px;
 }
@@ -95,4 +95,28 @@
 
 .carousel-caption h5{
   font-weight: 700;
+}
+
+@media (max-width: 768px){
+
+  .carousel-item img {
+    height: 250px;
+  }
+
+  .place-image img {
+    height: 200px;
+  }
+  .navigation-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .navigation-bar a {
+    color: gray !important;
+  }
+  .navigation-bar a:hover{
+    color: white !important;
+  }
 }

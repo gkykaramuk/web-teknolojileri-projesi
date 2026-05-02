@@ -12,17 +12,24 @@
 
   <body>
       
-  <nav class="navbar bg-dark border-bottom py-4">
+  <nav class="navbar navbar-dark navbar-expand-md bg-dark border-bottom py-4">
     <div class="container">
       <a class="navbar-brand fs-2 fw-bold" href="index.html" style="color: white;">
         Ana Sayfa
       </a>
-      <div class="navigation-bar">
-        <a href="index.html" class="me-3 text-decoration-none fs-5 active">Ana Sayfa</a>
-        <a href="cv.html" class="me-3 text-decoration-none fs-5" >CV</a>
-        <a href="sehirim.html" class="me-3 text-decoration-none fs-5">Şehrim</a>
-        <a href="ilgialani.html" class="me-3 text-decoration-none fs-5">İlgi Alanım</a>
-        <a href="iletisim.html" class="text-decoration-none fs-5" >İletişim</a>
+
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+
+      <div class="collapse navbar-collapse" id="nav-menu">
+        <div class="navigation-bar ms-auto mt-3 mt-md-0">
+          <a href="index.html" class="me-3 text-decoration-none fs-5 ">Ana Sayfa</a>
+          <a href="cv.html" class="me-3 text-decoration-none fs-5" >CV</a>
+          <a href="sehirim.html" class="me-3 text-decoration-none fs-5">Şehrim</a>
+          <a href="ilgialani.html" class="me-3 text-decoration-none fs-5">İlgi Alanım</a>
+          <a href="iletisim.html" class="text-decoration-none fs-5" >İletişim</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -76,6 +83,9 @@
       </div> 
     
       <div class="profile-right">
+
+        <img src="/resimler/profil.jpeg" alt="Profil Resmi" class="d-md-none mb-3" 
+        style="width:120px; height:120px; border-radius:8px; object-fit:cover; border:2px solid #ddd;">
 
         <h1>Gökay Karamukoğlu</h1>
         <hr>     

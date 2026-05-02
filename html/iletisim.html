@@ -11,22 +11,29 @@
 </head>
 <body>
 
-<nav class="navbar bg-dark border-bottom py-4">
+<nav class="navbar navbar-dark navbar-expand-md bg-dark border-bottom py-4">
   <div class="container">
       <a class="navbar-brand fs-2 fw-bold" href="iletisim.html" style="color: white;">
         İletişim
       </a>
-      <div class="navigation-bar">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+
+    <div class="collapse navbar-collapse" id="nav-menu"> 
+      <div class="navigation-bar ms-auto mt-3 mt-md-0">
         <a href="index.html" class="me-3 text-decoration-none fs-5 active">Ana Sayfa</a>
         <a href="cv.html" class="me-3 text-decoration-none fs-5" >CV</a>
         <a href="sehirim.html" class="me-3 text-decoration-none fs-5">Şehrim</a>
         <a href="ilgialani.html" class="me-3 text-decoration-none fs-5">İlgi Alanım</a>
         <a href="iletisim.html" class="text-decoration-none fs-5" >İletişim</a>
       </div>
-   </div>
+    </div>
+  </div>
 </nav>
 
-<section class="contact-box container mt-5">
+<section class="contact-box container mt-5 px-2">
 
    <h2 class="contact-title">İletişim</h2>
    <p class="text-muted">
@@ -38,22 +45,22 @@
 
 <div class="row g-4 mt-4">
 
-     <div class="col-6">
+     <div class="col-12 col-md-6">
       <label for="username" class="form-label">Ad Soyad</label>
       <input type="text" class="form-control" id="username" name="username" required placeholder="Ad Soyad">
      </div>
 
-     <div class="col-6">
+     <div class="col-12 col-md-6">
       <label for="email" class="form-label">E-posta</label>
       <input type="email" class="form-control" id="email" name="email" required placeholder="E-posta">
      </div>
 
-     <div class="col-6">
+     <div class="col-12 col-md-6">
       <label for="phone" class="form-label">Telefon</label>
       <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Telefon">
      </div>
 
-    <div class="col-6">
+    <div class="col-12 col-md-6">
      <label for="information" class="form-label">Konu</label>
      
      <select class="form-select" id="information" name="information" required>
@@ -67,21 +74,24 @@
     
     </div>
 
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <label for="date" class="form-label">İletişim Tarihi</label>
         <input type="date" class="form-control" id="date" name="date" required>
     </div>
 
-    <div class="col-6">
+    <div class="col-12 col-md-6">
      <label for="content" class="form-label">Konu İçeriği</label>
      
      <select class="form-select" id="content" name="content" required>
-       <option value="" selected disabled>Konu seçiniz</option>
-       <option>Bilgi Talebi</option>
-       <option>Proje Teklifi</option>
-       <option>Teklif İsteği</option>
-       <option>Görüşme Talebi</option>
-       <option>Sponsorluk/İşbirliği</option>
+       <option value="" selected disabled>İçerik seçiniz</option>
+        <option>Genel Soru</option>
+        <option>Teknik Destek</option>
+        <option>Fiyatlandırma</option>
+        <option>İş Birliği Detayı</option>
+        <option>Randevu Talebi</option>
+        <option>Geri Bildirim</option>
+        <option>Şikayet</option>
+        <option>Diğer</option>
      </select>
      
     </div>
@@ -92,9 +102,9 @@
         required placeholder="Mesajınız.."></textarea>
     </div>
 
- <div class="col-2">
+ <div class="col-6 col-md-2">
     <div class="form-box">
-     <label class="form-label d-block mb-2" for="gender">Cinsiyet</label>
+     <label class="form-label d-block mb-2">Cinsiyet</label>
       
      <div class="form-check">
       <input class="form-check-input" value="erkek" name="gender" id="male" type="radio" required>
@@ -114,9 +124,9 @@
  </div>
 
 
- <div class="col-2">
+ <div class="col-6 col-md-2">
     <div class="form-box">
-     <label class="form-label d-block mb-2 " for="contact"  >İletişim Türü</label>
+     <label class="form-label d-block mb-2 " >İletişim Türü</label>
       
 
      <div class="form-check">
@@ -136,7 +146,7 @@
     </div>
  </div>
 
-  <div class="col-8 ">
+  <div class="col-12 col-md-8 ">
     <div class="form-box">
 
      <label class="form-label d-block mb-2 ">İlgi Alanları</label>
@@ -212,12 +222,12 @@
 
   <div class="row mt-4 align-items-center">
 
-  <div class="col-6">
+    <div class="col-12 col-md-6">
       <button class="btn btn-outline-dark me-2" type="button" id="jsButton"> Javascript ile Gönder</button>
       <button class="btn btn-outline-dark" type="button" id="vueButton">Vue ile Gönder</button>
     </div>
 
-    <div class="col-6 text-end">
+    <div class=" col-12 col-md-6 text-md-end mt-2 mt-md-0">
       <button class="btn btn-danger" type="reset" id="reset">Temizle</button>
     </div>  
   </div>

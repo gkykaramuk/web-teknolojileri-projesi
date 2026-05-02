@@ -38,3 +38,20 @@ transform: translateY(-3px);
 height: 100px;
 resize: none; 
 }
+
+@media (max-width: 768px){
+
+  .navigation-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .navigation-bar a {
+    color: gray !important;
+  }
+  .navigation-bar a:hover{
+    color: white !important;
+  }
+}
