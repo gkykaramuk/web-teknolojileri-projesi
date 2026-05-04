@@ -22,5 +22,11 @@ $user = $_SESSION["user"];
   <h2>Hoşgeldiniz <?php echo htmlspecialchars($user); ?></h2>
 </div>
 
+<script>
+  setTimeout(function(){
+    window.location.href = "index.html";
+  }, 2000);
+</script>
+
 </body>
 </html>
