@@ -33,7 +33,7 @@
   </div>
 </nav>
 
-<section class="contact-box container mt-5 px-2">
+<section id="app" class="contact-box container mt-5 px-2">
 
    <h2 class="contact-title">İletişim</h2>
    <p class="text-muted">
@@ -41,48 +41,60 @@
    </p>
    <hr>
 
-<form id="contactForm">
+<form @submit.prevent="onSubmit" id="contactForm">
 
 <div class="row g-4 mt-4">
 
      <div class="col-12 col-md-6">
       <label for="username" class="form-label">Ad Soyad</label>
-      <input type="text" class="form-control" id="username" name="username" required placeholder="Ad Soyad">
+      <input type="text" class="form-control" :class="{'is-invalid': errors.username}"
+       id="username" v-model="username"
+       name="username" placeholder="Ad Soyad">
+       <div class="invalid-feedback">{{ errors.username }}</div>
      </div>
 
      <div class="col-12 col-md-6">
       <label for="email" class="form-label">E-posta</label>
-      <input type="email" class="form-control" id="email" name="email" required placeholder="E-posta">
+      <input type="email" class="form-control" :class="{'is-invalid': errors.email}" 
+      id="email" v-model="email" name="email" placeholder="E-posta">
+      <div class="invalid-feedback">{{ errors.email }}</div>
      </div>
 
      <div class="col-12 col-md-6">
       <label for="phone" class="form-label">Telefon</label>
-      <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Telefon">
+      <input type="tel" class="form-control" :class="{'is-invalid': errors.phone}" 
+      id="phone" v-model="phone" name="phone" placeholder="Telefon">
+      <div class="invalid-feedback">{{ errors.phone }}</div>
      </div>
 
     <div class="col-12 col-md-6">
      <label for="information" class="form-label">Konu</label>
      
-     <select class="form-select" id="information" name="information" required>
-        <option value="" selected disabled>Konu seçiniz</option>
+     <select class="form-select" :class="{'is-invalid': errors.information}"
+      id="information" v-model="information" name="information">
+       <option value="" selected disabled>Konu seçiniz</option>
        <option>Bilgi Talebi</option>
        <option>Proje Teklifi</option>
        <option>Teklif İsteği</option>
        <option>Görüşme Talebi</option>
        <option>Sponsorluk/İşbirliği</option>
      </select>
-    
+
+     <div class="invalid-feedback">{{ errors.information }}</div>
     </div>
 
     <div class="col-12 col-md-6">
         <label for="date" class="form-label">İletişim Tarihi</label>
-        <input type="date" class="form-control" id="date" name="date" required>
+        <input type="date" class="form-control" :class="{'is-invalid': errors.date}" 
+         id="date" v-model="date" name="date">
+          <div class="invalid-feedback">{{ errors.date }}</div>
     </div>
 
     <div class="col-12 col-md-6">
      <label for="content" class="form-label">Konu İçeriği</label>
      
-     <select class="form-select" id="content" name="content" required>
+     <select class="form-select" :class="{'is-invalid': errors.content}" id="content" v-model="content"
+      name="content" >
        <option value="" selected disabled>İçerik seçiniz</option>
         <option>Genel Soru</option>
         <option>Teknik Destek</option>
@@ -93,130 +105,154 @@
         <option>Şikayet</option>
         <option>Diğer</option>
      </select>
-     
+      <div class="invalid-feedback">{{ errors.content }}</div>
     </div>
 
     <div class="col-12">
      <label for="message" class="form-label">Mesaj</label>
-     <textarea rows="5" class="form-control fixed-textarea" id="message" name="message" 
-        required placeholder="Mesajınız.."></textarea>
+     <textarea rows="5" class="form-control fixed-textarea" :class="{'is-invalid': errors.message}"
+      id="message" v-model="message" name="message" 
+       placeholder="Mesajınız.."></textarea>
+       <div class="invalid-feedback">{{ errors.message }}</div> 
     </div>
 
  <div class="col-6 col-md-2">
-    <div class="form-box">
+    <div class="form-box" :class="{ 'border border-danger rounded p-2': errors.gender}">
      <label class="form-label d-block mb-2">Cinsiyet</label>
       
      <div class="form-check">
-      <input class="form-check-input" value="erkek" name="gender" id="male" type="radio" required>
+      <input class="form-check-input" 
+      value="erkek" v-model="gender" name="gender" 
+      id="male" type="radio" >
       <label class="form-check-label" for="male">Erkek</label>
      </div>
 
     <div class="form-check">
-     <input class="form-check-input" value="kadın" name="gender" id="female" type="radio">
+     <input class="form-check-input" 
+     value="kadın" v-model="gender"  name="gender" id="female" type="radio">
      <label class="form-check-label" for="female">Kadın</label>
     </div>
 
     <div class="form-check">
-     <input class="form-check-input" value="diger" name="gender" id="other" type="radio">
+     <input class="form-check-input" 
+      value="diger" v-model="gender" name="gender" id="other" type="radio">
      <label class="form-check-label" for="other">Diğer</label>
     </div>
+    
+     <div class="invalid-feedback d-block text-danger">{{ errors.gender }}</div>
+    
    </div>
  </div>
 
 
  <div class="col-6 col-md-2">
-    <div class="form-box">
+    <div class="form-box" :class="{ 'border border-danger rounded p-2':errors.contact }">
      <label class="form-label d-block mb-2 ">İletişim Türü</label>
       
 
      <div class="form-check">
-      <input class="form-check-input" type="radio" name="contact" id="eposta" required>
+      <input class="form-check-input" 
+      type="radio" v-model="contact" name="contact" id="eposta" value="eposta" >
       <label class="form-check-label" for="eposta">E-posta</label>
      </div>
 
     <div class="form-check">
-     <input class="form-check-input" type="radio" name="contact" id="telephone" >
+     <input class="form-check-input"  
+     type="radio" v-model="contact" name="contact" id="telephone" value="telephone">
      <label class="form-check-label" for="telephone">Telefon</label>
     </div>
 
     <div class="form-check">
-     <input class="form-check-input" type="radio" name="contact" id="linkedin">
+     <input class="form-check-input" 
+      type="radio" v-model="contact" name="contact" id="linkedin" value="linkedin">
      <label class="form-check-label" for="linkedin">LinkedIn</label>
     </div>
-    </div>
+
+     <div class="invalid-feedback d-block text-danger" v-if="errors.contact" >{{ errors.contact }}</div>
+
+    </div>  
  </div>
 
   <div class="col-12 col-md-8 ">
-    <div class="form-box">
+    <div class="form-box" :class="{ 'border border-danger rounded p-2':errors.interests}">
 
      <label class="form-label d-block mb-2 ">İlgi Alanları</label>
 
       <div class="row">
         <div class="col-4">       
              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="web" name="web">
+                <input class="form-check-input" type="checkbox" id="web" 
+                  v-model="interests" value="Web Geliştirme" name="web">
                 <label class="form-check-label" for="web">Web Geliştirme</label>
              </div>
         </div>
 
         <div class="col-4">
              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="cyber" name="cyber">
+                <input class="form-check-input" type="checkbox" id="cyber"
+                  v-model="interests" value="Siber Güvenlik" name="cyber">
                 <label class="form-check-label" for="cyber">Siber Güvenlik</label>
             </div>
         </div>
         
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" id="ai" name="ai">
+                 <input class="form-check-input"  type="checkbox" id="ai" 
+                 v-model="interests" value="Yapay Zeka" name="ai">
                  <label class="form-check-label" for="ai">Yapay Zeka</label>
              </div>
         </div>   
         
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" id="mobile" name="mobile">
+                 <input class="form-check-input"  type="checkbox" id="mobile"
+                  v-model="interests" value="Mobil Uygulama"  name="mobile">
                  <label class="form-check-label" for="mobile">Mobil Uygulama</label>
              </div>
         </div> 
 
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" id="game" name="game">
+                 <input class="form-check-input"  type="checkbox" id="game"
+                  v-model="interests" value="Oyun Geliştirme" name="game">
                  <label class="form-check-label" for="game">Oyun Geliştime</label>
              </div>
         </div> 
 
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" name="data" id="data">
+                 <input class="form-check-input" type="checkbox" name="data"
+                 v-model="interests" value="Veri Bilimi" id="data">
                  <label class="form-check-label" for="data">Veri Bilimi</label>
              </div>
         </div>
 
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" name="backend" id="backend">
+                 <input class="form-check-input"  type="checkbox" name="backend" 
+                  v-model="interests" value="Backend Geliştirme" id="backend">
                  <label class="form-check-label" for="backend">Backend Geliştirme</label>
              </div>
         </div>
 
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" name="ui-ux" id="ui-ux">
+                 <input class="form-check-input"  type="checkbox" name="ui-ux"
+                  v-model="interests" value="UI/UX Tasarımı" id="ui-ux">
                  <label class="form-check-label" for="ui-ux">UI/UX Tasarım</label>
              </div>
         </div>
 
         <div class="col-4">
              <div class="form-check">
-                 <input class="form-check-input" type="checkbox" name="blockchain" id="blockchain">
+                 <input class="form-check-input" type="checkbox" name="blockchain"
+                  v-model="interests" value="Blockchain" id="blockchain">
                  <label class="form-check-label" for="blockchain">Blockchain</label>
-             </div>
+             </div> 
         </div>
 
       </div>
-
+     <div class="invalid-feedback d-block text-danger" v-if="errors.interests">{{ errors.interests }}</div>
     </div>
   </div>
 
@@ -224,11 +260,11 @@
 
     <div class="col-12 col-md-6">
       <button class="btn btn-outline-dark me-2" type="button" id="jsButton" onclick="jsValidate()">Javascript ile Gönder</button>
-      <button class="btn btn-outline-dark" type="button" id="vueButton">Vue ile Gönder</button>
+      <button class="btn btn-outline-dark" type="submit" id="vueButton" >Vue ile Gönder</button>
     </div>
 
     <div class=" col-12 col-md-6 text-md-end mt-2 mt-md-0">
-      <button class="btn btn-danger" type="reset" id="reset">Temizle</button>
+      <button class="btn btn-danger" type="reset" id="reset" @click="handleReset">Temizle</button>
     </div>  
   </div>
 
@@ -246,6 +282,10 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
     crossorigin="anonymous"></script> 
-    <script src="js/iletisim.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@4/dist/vee-validate.min.js"></script>
+    <script src="js/iletisim-vue.js"></script>
+    <script src="js/iletisim.js"></script>
+  
 </body>
-</html>
+</html> 

@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
     clearAllErrors();
   });
 
-  // Blur ile anlık kontrol
+  // Blur 
   document.getElementById("username").addEventListener("blur", function () {
     const err = validateUsername(this.value);
     if (err) showError(this, err); else showSuccess(this);
