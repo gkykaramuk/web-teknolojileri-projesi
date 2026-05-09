@@ -137,13 +137,8 @@ createApp({
     });
 
   
-    const onSubmit = handleSubmit((values) => {
-      console.log("FORM DATA:", values);
-
-      alert("Vue ile başarıyla gönderildi ");
-
-
-      resetForm();
+    const onSubmit = handleSubmit((values) => {   
+    document.getElementById("contactForm").submit();      
     });
 
 

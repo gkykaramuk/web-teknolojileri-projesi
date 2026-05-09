@@ -168,7 +168,7 @@ function validateForm() {
   clearAllErrors();
   const valid = validateForm();
   if (valid) {
-    alert("Form başarıyla gönderildi!");
+    document.getElementById("contactForm").submit();
   } else {
     const firstInvalid = document.querySelector(".is-invalid");
     if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });

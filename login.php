@@ -54,12 +54,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       <div class="mb-3 text-start">
         <label for="email" class="form-label">Kullanıcı Adı</label>
-        <input type="text" id="email" name="email" class="form-control" required>
+        <input type="text" id="email" name="email" class="form-control">
       </div>
 
       <div class="mb-3 text-start">
         <label for="password" class="form-label">Şifre</label>
-        <input type="password" id="password" name="password" class="form-control" required>
+        <input type="password" id="password" name="password" class="form-control">
       </div>
 
       <button type="submit" class="btn btn-dark w-100">Giriş Yap</button>
